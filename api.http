@@ -1,0 +1,98 @@
+### 🔐 REGISTER USER (admin or client)
+POST http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+  "name": "Admin User",
+  "email": "admin@example.com",
+  "password": "admin123",
+  "role": "admin"
+}
+
+### 🔐 LOGIN USER
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "admin123"
+}
+
+### ✅ CREATE CATEGORY (manual for now — replace with actual ObjectId)
+# You’ll need a real Category _id from MongoDB
+
+### 📦 CREATE PRODUCT (admin only)
+POST http://localhost:5000/api/products
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "name": "Red Hoodie",
+  "category": "REPLACE_WITH_CATEGORY_ID",
+  "description": "Comfortable red hoodie",
+  "color": "Red",
+  "size": "M",
+  "price": 49.99,
+  "discount": 10,
+  "stock": 100
+}
+
+### 🛍️ GET ALL PRODUCTS
+GET http://localhost:5000/api/products
+Authorization: Bearer 
+
+### 📦 GET SINGLE PRODUCT BY ID
+GET http://localhost:5000/api/products/REPLACE_PRODUCT_ID
+Authorization: Bearer 
+
+### 🛒 ADD TO CART
+POST http://localhost:5000/api/cart/add
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "productId": "REPLACE_PRODUCT_ID",
+  "quantity": 2
+}
+
+### 🛒 GET CART
+GET http://localhost:5000/api/cart
+Authorization: Bearer 
+
+### ❌ REMOVE FROM CART
+DELETE http://localhost:5000/api/cart/remove/REPLACE_PRODUCT_ID
+Authorization: Bearer 
+
+### 🧾 PLACE ORDER
+POST http://localhost:5000/api/orders
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "paymentMethod": "Cash on Delivery"
+}
+
+### 📄 GET MY ORDERS
+GET http://localhost:5000/api/orders/my
+Authorization: Bearer 
+
+### 📄 ADMIN: GET ALL ORDERS
+GET http://localhost:5000/api/orders
+Authorization: Bearer 
+
+### ✅ ADMIN: UPDATE ORDER STATUS
+PUT http://localhost:5000/api/admin/orders/REPLACE_ORDER_ID/status
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "status": "Shipped"
+}
+
+### 👥 ADMIN: GET ALL USERS
+GET http://localhost:5000/api/admin/users
+Authorization: Bearer 
+
+### ❌ ADMIN: DELETE USER
+DELETE http://localhost:5000/api/admin/users/REPLACE_USER_ID
+Authorization: Bearer 
