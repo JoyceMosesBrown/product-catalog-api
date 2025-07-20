@@ -1,4 +1,4 @@
-Product Catalog API
+# Product Catalog API
 A RESTful e-commerce backend built with Node.js, Express, and MongoDB. This project includes:
 
 JWT-based authentication
@@ -11,7 +11,7 @@ Shopping cart and order functionality
 
 Swagger-based API documentation
 
-Project Structure
+## Project Structure
 ├── controllers/
 │   ├── authController.js
 │   ├── cartController.js
@@ -34,13 +34,16 @@ Project Structure
 │   └── db.js
 ├── app.js
 └── .env
-Getting Started
+
+## Getting Started
 
 1. Clone the repository
 git clone <your-repo-url>
 cd product-catalog-api
+
 2. Install dependencies
 npm install
+
 3. Configure environment variables
 Create a .env file in the root directory with the following:
 PORT=5000
@@ -55,7 +58,7 @@ npm run dev
 npm start
 The server will run on http://localhost:5000
 
-API Documentation
+## API Documentation
 Interactive Swagger documentation is available at:
 
 http://localhost:5000/api-docs/
@@ -73,7 +76,7 @@ Authorization: Bearer <your_token>
 Product Management
 Only authenticated users or admins can create, update, or delete products.
 
-Endpoint	Method	Description
+## Endpoint	Method	Description
 /api/products	GET	Get all products or search
 /api/products	POST	Add a new product (auth required)
 /api/products/:id	GET	Get product by ID
@@ -103,24 +106,24 @@ Endpoint	Method	Description
 /api/orders/:id/status	PUT	Update order status (admin)
 
 
-Status Codes
+## Status Codes
 Code	Description
 200	Success
 201	Created
 400	Bad Request
 401	Unauthorized
 
-Testing
+## Testing
 I used Postman to test endpoints. Example requests and responses are available in the Swagger UI.
 
-Limitations
+## Limitations
 No image or file uploads
 
 Roles are fixed 
 
 JWT-based authentication only
 
-Video Walkthrough
+## Video Walkthrough
 Link: https://youtu.be/AFFqwbsftQQ
 
 
