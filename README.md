@@ -12,28 +12,28 @@ Shopping cart and order functionality
 Swagger-based API documentation
 
 ## Project Structure
-├── controllers/
+## ├── controllers/
 │   ├── authController.js
 │   ├── cartController.js
 │   ├── orderController.js
 │   └── adminController.js
-├── models/
+## ├── models/
 │   ├── User.js
 │   ├── Product.js
 │   ├── Cart.js
 │   └── Order.js
-├── routes/
+## ├── routes/
 │   ├── authRoutes.js
 │   ├── productRoutes.js
 │   ├── cartRoutes.js
 │   ├── orderRoutes.js
 │   └── adminRoutes.js
-├── middleware/
+## ├── middleware/
 │   └── authMiddleware.js
-├── config/
-│   └── db.js
-├── app.js
-└── .env
+## ├── config/
+ │   └── db.js
+ ├── app.js
+ └── .env
 
 ## Getting Started
 
@@ -76,34 +76,53 @@ Authorization: Bearer <your_token>
 Product Management
 Only authenticated users or admins can create, update, or delete products.
 
-## Endpoint	Method	Description
-/api/products	GET	Get all products or search
-/api/products	POST	Add a new product (auth required)
-/api/products/:id	GET	Get product by ID
-/api/products/:id	PUT	Update product (auth required)
-/api/products/:id	DELETE	Delete product (auth required)
+##  API Endpoints
 
-Cart Flow
-Endpoint	Method	Description
-/api/cart	GET	Fetch current user's cart
-/api/cart	POST	Add a product to the cart
-/api/cart/:itemId	PUT	Update quantity of a cart item
-/api/cart/:itemId	DELETE	Remove an item from the cart
+---
 
-Order Flow
-Endpoint	Method	Description
-/api/orders	POST	Place an order from the current cart
-/api/orders	GET	Get all orders (admin only)
-/api/orders/my	GET	Get all orders of the current user
-/api/orders/:id	GET	Get a specific order by ID
-/api/orders/:id/status	PUT	Update order status (admin only)
+###   Product Endpoints
 
+| Endpoint             | Method | Description                           |
+|----------------------|--------|---------------------------------------|
+| /api/products        | GET    | Get all products or search            |
+| /api/products        | POST   | Add a new product (auth required)     |
+| /api/products/:id    | GET    | Get product by ID                     |
+| /api/products/:id    | PUT    | Update product (auth required)        |
+| /api/products/:id    | DELETE | Delete product (auth required)        |
 
-Admin Controls
-Endpoint	Method	Description
-/api/admin/users	GET	Get all users (admin only)
-/api/admin/users/:id	DELETE	Delete a user (admin only)
-/api/orders/:id/status	PUT	Update order status (admin)
+---
+
+###  Cart Endpoints
+
+| Endpoint                | Method | Description                         |
+|-------------------------|--------|-------------------------------------|
+| /api/cart               | GET    | Fetch current user's cart           |
+| /api/cart               | POST   | Add a product to the cart           |
+| /api/cart/:itemId       | PUT    | Update quantity of a cart item      |
+| /api/cart/:itemId       | DELETE | Remove an item from the cart        |
+
+---
+
+###  Order Endpoints
+
+| Endpoint                  | Method | Description                                 |
+|---------------------------|--------|---------------------------------------------|
+| /api/orders               | POST   | Place an order from the current cart        |
+| /api/orders               | GET    | Get all orders (admin only)                 |
+| /api/orders/my            | GET    | Get all orders of the current user          |
+| /api/orders/:id           | GET    | Get a specific order by ID                  |
+| /api/orders/:id/status    | PUT    | Update order status (admin only)            |
+
+---
+
+###   Admin Endpoints
+
+| Endpoint                    | Method | Description                             |
+|-----------------------------|--------|-----------------------------------------|
+| /api/admin/users            | GET    | Get all users (admin only)              |
+| /api/admin/users/:id        | DELETE | Delete a user (admin only)              |
+| /api/orders/:id/status      | PUT    | Update order status (admin only)        |
+
 
 
 ## Status Codes
